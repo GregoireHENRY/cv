@@ -1,0 +1,13 @@
+---
+abstract: \input{src/abstract.md}
+bibliography: src/biblio.bib
+nocite: '@*'
+header-includes: \input{header}
+logo: rsc/img/all/logos.png
+numbersections: true
+documentclass: article
+fontsize: 12pt
+links-as-notes: true
+classoption:
+    - fleqn
+---
