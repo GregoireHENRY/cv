@@ -4,15 +4,25 @@ TARGET := latex
 TEMPLATE := template.tex
 FILTERS := citeproc
 HEADER := header.yaml
-SOURCES_DIRECTORY := src/
-SOURCES := title introduction section_1 section_2 section_3 conclusion acknowledgments references
+SOURCES_DIRECTORY := src
+SOURCES := title \
+	       subtitle \
+	       aboutme \
+		   info \
+		   skills \
+		   participations \
+		   extra \
+		   hobbies \
+		   experiences \
+		   formations \
+		   references
 SOURCES_EXTENSION := md
-OUTPUT := paper.pdf
+OUTPUT := cv.pdf
 
 # Build flags
 FLAGS_FILTERS := $(addprefix --, $(FILTERS))
 ALL_FLAGS := -t $(TARGET) $(FLAGS_FILTERS) --template=$(TEMPLATE)
-ALL_SOURCES := $(addprefix $(SOURCES_DIRECTORY), $(SOURCES))
+ALL_SOURCES := $(addprefix $(SOURCES_DIRECTORY)/, $(SOURCES))
 ALL_SOURCES := $(addsuffix .$(SOURCES_EXTENSION), $(ALL_SOURCES))
 ALL_SOURCES := $(HEADER) $(ALL_SOURCES)
 

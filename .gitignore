@@ -1,0 +1,10 @@
+# default
+*.pdf
+
+# resources
+rsc/img/
+
+# resources exceptions
+!rsc/img/all/hera.png
+!rsc/img/all/rob.png
+!rsc/img/all/tira.png
