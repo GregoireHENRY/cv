@@ -1,9 +1,11 @@
 ---
-bibliography: src/biblio.bib
-nocite: '@*'
-header-includes: \input{header}
-logo: rsc/img/all/hera.png
-documentclass: article
+geometry:
+    - top=2cm
+    - bottom=3cm
+    - left=1cm
+    - right=1cm
+    - footskip=2cm
 fontsize: 12pt
 links-as-notes: true
+# logo: rsc/img/all/logo.png
 ---

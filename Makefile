@@ -4,18 +4,8 @@ TARGET := latex
 TEMPLATE := template.tex
 FILTERS := citeproc
 HEADER := header.yaml
-SOURCES_DIRECTORY := src
-SOURCES := title \
-	       subtitle \
-	       aboutme \
-		   info \
-		   skills \
-		   participations \
-		   extra \
-		   hobbies \
-		   experiences \
-		   formations \
-		   references
+SOURCES_DIRECTORY := .
+SOURCES := cv
 SOURCES_EXTENSION := md
 OUTPUT := cv.pdf
 
