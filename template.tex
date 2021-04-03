@@ -31,24 +31,12 @@ $endfor$
 \usepackage{ulem}
 \usepackage{vwcol}
 \usepackage{paracol}
+\usepackage{needspace}
 
 % Commands.
 \newcommand{\HRule}{\noindent\rule{\linewidth}{0.1mm}}
 \setlength\parindent{0pt}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
-
-% Hyperref config.
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=cyan,
-}
-\urlstyle{same}
-
-% Section config.
-\titleformat{\section}[runin]
-  {\normalfont\scshape}{\thesection}{1em}{}
 
 % Underline.
 \renewcommand{\ULdepth}{1.8pt}
@@ -57,6 +45,17 @@ $endfor$
   \uline{\phantom{#1}}%
   \llap{\contour{white}{#1}}%
 }
+
+% Hyperref config.
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    filecolor=magenta,
+}
+
+% Section config.
+\titleformat{\section}[runin]
+  {\normalfont\scshape}{\thesection}{1em}{}
 
 % Paracol columns width.
 \makeatletter
@@ -82,16 +81,29 @@ $for(header-includes)$
 $endfor$
 
 
-% Footer.
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\fancyfoot[R]{\scriptsize{Updated \usdate\today}}
+% Page styles.
+\fancypagestyle{firstpagestyle}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyfoot[R]{\scriptsize{Updated \usdate\today}}
+    \fancyfoot[L]{\scriptsize{\thepage}}
+}
+\fancypagestyle{allpagestyle}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyhead[C]{\scriptsize{CV G. Henry}}
+    \fancyfoot[R]{\scriptsize{Updated \usdate\today}}
+    \fancyfoot[L]{\scriptsize{\thepage}}
+}
 
 % Begin document.
 \begin{document}
+\pagestyle{allpagestyle}
 
 % Title
+\thispagestyle{firstpagestyle}
 \vspace*{-2cm}
 \setlocalcolumnwidth{3cm, 10cm, 4cm}
 \begin{paracol}{3}
@@ -102,28 +114,28 @@ $endfor$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/linkedin}
         \end{minipage}
-        \href{https://www.linkedin.com/in/$linkedin$}{in/$linkedin$}
+        \href{https://www.linkedin.com/in/$linkedin$}{\muline{in/$linkedin$}}
         \linebreak
     $endif$
     $if(github)$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/github}
         \end{minipage}
-        \href{https://github.com/$github$}{$github$}
+        \href{https://github.com/$github$}{\muline{$github$}}
         \linebreak
     $endif$
     $if(website)$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/website}
         \end{minipage}
-        \href{https://$website$}{$website$}
+        \href{https://$website$}{\muline{$website$}}
         \linebreak
     $endif$
     $if(email)$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/email}
         \end{minipage}
-        \href{mailto:$email$?subject=Heyy!&body=What can I do for you? :)}{$email$}
+        \href{mailto:$email$?subject=Heyy!&body=What can I do for you? :)}{\muline{$email$}}
         \linebreak
     $endif$
     $if(phone)$
@@ -155,10 +167,9 @@ $endfor$
 \end{flushright}
 \end{paracol}
 \restorelocalcolumnwidth
-\vspace{-0.3cm}
+\vspace{-0.5cm}
 \HRule
 \vspace{0cm}
-\thispagestyle{fancy}
 
 % Include before.
 $for(include-before)$
@@ -196,6 +207,67 @@ $body$
         \end{adjustwidth}
         $sep$\vspace{0.8cm}
     $endfor$
+\end{adjustwidth}
+
+% Conferences.
+\section{Conferences}
+\footnotesize
+\begin{adjustwidth}{3cm}{0cm}
+    $for(conferences)$
+    \textbf{$conferences.name$}, $conferences.location$\hfill \textit{$conferences.date$}\\
+        $conferences.topic$\\
+        \textit{$conferences.participants$}
+        $sep$\\\\
+    $endfor$
+\end{adjustwidth}
+
+% Participations.
+\needspace{2\baselineskip}
+\section{Participations}
+\footnotesize
+\begin{adjustwidth}{3cm}{0cm}
+    $for(participations)$
+    \textbf{$participations.name$}, $participations.location$\hfill \textit{$participations.period$}\\
+        $if(participations.description)$
+            $participations.description$\\
+        $endif$
+        $sep$\\
+    $endfor$
+\end{adjustwidth}
+
+% About me.
+\section{About me}
+\footnotesize
+\begin{adjustwidth}{3cm}{0cm}
+    $aboutme$
+\end{adjustwidth}
+
+% Coding skills.
+\section{Coding skills}
+\footnotesize
+\begin{adjustwidth}{3cm}{0cm}
+    \textbf{Languages}\\
+    $codingskills.languages$\\\\
+    \textbf{Concepts}\\
+    $codingskills.concepts$\\\\
+    \textbf{Project tools}\\
+    $codingskills.projecttools$\\\\
+    \textbf{Scientific tools}\\
+    $codingskills.scientifictools$
+\end{adjustwidth}
+
+% Hobbies
+\section{Hobbies}
+\footnotesize
+\begin{adjustwidth}{3cm}{0cm}
+    $hobbies$
+\end{adjustwidth}
+
+% Extra
+\section{Extra}
+\footnotesize
+\begin{adjustwidth}{3cm}{0cm}
+    $extra$
 \end{adjustwidth}
 
 % Include after.
