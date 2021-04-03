@@ -25,9 +25,17 @@ $endfor$
 \usepackage{multicol}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{changepage}
+\usepackage{titlesec}
+\usepackage{contour}
+\usepackage{ulem}
+\usepackage{vwcol}
+\usepackage{paracol}
 
 % Commands.
 \newcommand{\HRule}{\noindent\rule{\linewidth}{0.1mm}}
+\setlength\parindent{0pt}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
 
 % Hyperref config.
 \hypersetup{
@@ -37,6 +45,29 @@ $endfor$
     urlcolor=cyan,
 }
 \urlstyle{same}
+
+% Section config.
+\titleformat{\section}[runin]
+  {\normalfont\scshape}{\thesection}{1em}{}
+
+% Underline.
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\muline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+% Paracol columns width.
+\makeatletter
+\newcommand{\setlocalcolumnwidth}[1]{%
+  \let\oldratio\pcol@columnratioleft
+  \setcolumnwidth{#1}%
+}
+\newcommand{\restorelocalcolumnwidth}{%
+  \let\pcol@columnratioleft\oldratio%
+}
+\makeatother
 
 % Numbering.
 $if(numbersections)$
@@ -55,14 +86,15 @@ $endfor$
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\fancyfoot[R]{\scriptsize{\today}}
+\fancyfoot[R]{\scriptsize{Updated \usdate\today}}
 
 % Begin document.
 \begin{document}
 
 % Title
 \vspace*{-2cm}
-\begin{multicols}{3}
+\setlocalcolumnwidth{3cm, 10cm, 4cm}
+\begin{paracol}{3}
 \begin{flushleft}
     \scriptsize
     \vspace*{\fill}
@@ -101,7 +133,7 @@ $endfor$
         $phone$
     $endif$
 \end{flushleft}
-\columnbreak
+\switchcolumn[1]
 
 \begin{center}
     \huge
@@ -112,7 +144,7 @@ $endfor$
     \scriptsize
     $subtitle$
 \end{center}
-\columnbreak
+\switchcolumn[2]
 
 \begin{flushright}
     \scriptsize
@@ -121,7 +153,8 @@ $endfor$
         $address$
     $endif$
 \end{flushright}
-\end{multicols}
+\end{paracol}
+\restorelocalcolumnwidth
 \vspace{-0.3cm}
 \HRule
 \vspace{0cm}
@@ -136,15 +169,34 @@ $endfor$
 $body$
 
 % Formations.
-\begin{flushleft}
-    \large
-    FORMATIONS
-\end{flushleft}
-
+\section{Formations}
 \footnotesize
-$for(formations)$
-    $formations.name$ $formations.year$ $formations.location$
-$endfor$
+\begin{adjustwidth}{3cm}{0cm}
+    $for(formations)$
+    \textbf{$formations.name$}, $formations.location$\hfill \textit{$formations.period$}
+        \begin{adjustwidth}{0.6cm}{0cm}
+            $formations.description$
+        \end{adjustwidth}
+        $sep$\vspace{0.8cm}
+    $endfor$
+\end{adjustwidth}
+
+% Experiences.
+\section{Experiences}
+\footnotesize
+\begin{adjustwidth}{3cm}{0cm}
+    $for(experiences)$
+    \textbf{$experiences.name$}, $experiences.location$
+        \begin{adjustwidth}{0.6cm}{0cm}
+            $for(experiences.posts)$
+                \textit{$experiences.posts.name$}\hfill \textit{$experiences.posts.period$}\\
+                $experiences.posts.description$
+                $sep$\\\\
+            $endfor$
+        \end{adjustwidth}
+        $sep$\vspace{0.8cm}
+    $endfor$
+\end{adjustwidth}
 
 % Include after.
 $for(include-after)$
