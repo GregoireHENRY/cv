@@ -124,6 +124,7 @@ $endfor$
 \end{multicols}
 \vspace{-0.3cm}
 \HRule
+\vspace{0cm}
 \thispagestyle{fancy}
 
 % Include before.
@@ -133,6 +134,17 @@ $endfor$
 
 % Body.
 $body$
+
+% Formations.
+\begin{flushleft}
+    \large
+    FORMATIONS
+\end{flushleft}
+
+\footnotesize
+$for(formations)$
+    $formations.name$ $formations.year$ $formations.location$
+$endfor$
 
 % Include after.
 $for(include-after)$

@@ -17,7 +17,7 @@ address: |
     | 1180 Brussels, Belgium
 
 formations:
-    - IPSA:
-        - year: 2020
-        - location: Toulouse & Paris, France
+    - name: IPSA
+      year: 2020
+      location: Toulouse & Paris, France
 ---
