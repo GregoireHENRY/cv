@@ -2,7 +2,7 @@
 
 [![license badge]][license link]
 [![pre-commit badge]][pre-commit link]
-[![pandoc bade]][pandoc link]
+[![pandoc badge]][pandoc link]
 
 > Is it really that easy?
 
@@ -34,7 +34,7 @@ make
 
 The contents of your CV are written in [`cv.md`](cv.md).
 
-The general configuration are visible in [`header.yaml`](header.yaml)
+The general configuration are visible in [`header.yaml`](header.yaml).
 
 The template [`template.tex`](template.tex) is where the format takes place.
 You can change it the way you like, and add more functionalities. Please send
