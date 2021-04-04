@@ -1,10 +1,10 @@
 ---
 geometry:
     - top=2cm
-    - bottom=3cm
+    - bottom=1.9cm
     - left=1.5cm
     - right=2cm
-    - footskip=2cm
+    - footskip=0.6cm
 fontsize: 12pt
 links-as-notes: true
 ---

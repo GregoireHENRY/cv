@@ -49,13 +49,16 @@ $endfor$
 % Hyperref config.
 \hypersetup{
     colorlinks=true,
-    urlcolor=blue,
+    urlcolor=black,
     filecolor=magenta,
 }
 
+% External link.
+\newcommand{\mhref}[2]{\href{#2}{\texttt{#1}}}
+
 % Section config.
 \titleformat{\section}[runin]
-  {\normalfont\scshape}{\thesection}{1em}{}
+  {\small\scshape}{\thesection}{1em}{}
 
 % Paracol columns width.
 \makeatletter
@@ -79,7 +82,6 @@ $endif$
 $for(header-includes)$
     $header-includes$
 $endfor$
-
 
 % Page styles.
 \fancypagestyle{firstpagestyle}{
@@ -105,7 +107,7 @@ $endfor$
 % Title
 \thispagestyle{firstpagestyle}
 \vspace*{-2cm}
-\setlocalcolumnwidth{3cm, 10cm, 4cm}
+\setlocalcolumnwidth{4cm, 10cm, 4cm}
 \begin{paracol}{3}
 \begin{flushleft}
     \scriptsize
@@ -114,28 +116,28 @@ $endfor$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/linkedin}
         \end{minipage}
-        \href{https://www.linkedin.com/in/$linkedin$}{\muline{in/$linkedin$}}
+        \mhref{in/$linkedin$}{https://www.linkedin.com/in/$linkedin$}
         \linebreak
     $endif$
     $if(github)$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/github}
         \end{minipage}
-        \href{https://github.com/$github$}{\muline{$github$}}
+        \mhref{$github$}{https://github.com/$github$}
         \linebreak
     $endif$
     $if(website)$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/website}
         \end{minipage}
-        \href{https://$website$}{\muline{$website$}}
+        \mhref{$website$}{https://$website$}
         \linebreak
     $endif$
     $if(email)$
         \begin{minipage}{0.8\baselineskip}
             \includegraphics[width=\linewidth]{rsc/img/logos/email}
         \end{minipage}
-        \href{mailto:$email$?subject=Heyy!&body=What can I do for you? :)}{\muline{$email$}}
+        \mhref{$email$}{mailto:$email$?subject=Heyy!&body=What can I do for you? :)}
         \linebreak
     $endif$
     $if(phone)$
@@ -210,19 +212,26 @@ $body$
 \end{adjustwidth}
 
 % Conferences.
+\needspace{7\baselineskip}
 \section{Conferences}
 \footnotesize
 \begin{adjustwidth}{3cm}{0cm}
     $for(conferences)$
     \textbf{$conferences.name$}, $conferences.location$\hfill \textit{$conferences.date$}\\
         $conferences.topic$\\
-        \textit{$conferences.participants$}
-        $sep$\\\\
+        \textit{$conferences.participants$}\\
+        $if(conferences.reference)$
+            $conferences.reference$\\
+        $endif$
+        $if(conferences.link)$
+            \mhref{$conferences.link.replacement$}{$conferences.link.url$}\\
+        $endif$
+        $sep$\\
     $endfor$
 \end{adjustwidth}
 
 % Participations.
-\needspace{2\baselineskip}
+\needspace{3\baselineskip}
 \section{Participations}
 \footnotesize
 \begin{adjustwidth}{3cm}{0cm}
