@@ -105,7 +105,7 @@ conferences:
 
 participations:
     - name: HERA TIRA CPR meeting at ESA ESTEC
-      period: 2020
+      period: Sep 2020
       location: Noordwijk, the Netherlands
       description: Presentation of thermal model.
     - name: ActInSpace
@@ -137,13 +137,15 @@ aboutme: |
 codingskills:
     languages: |
       Rust, Python, C, C++, Julia, Matlab, Shell scripts, Bash, Fortran, LaTeX,
-      OpenGL, SDL2, Qt5, GTK3, Regex, Markdown, Pandoc, Vim scripts
+      OpenGL, SDL2, Qt5, GTK3, Regex, Markdown, Pandoc, Vim scripts, json
     concepts: |
       Asynchronous/parallelization, tests, test driven development,
       wrapper/bindings, interface between languages
+    environment: |
+      Linux, Vim, VSCodium
     projecttools: |
       Pytest, flake8, black, mypy, poetry, venv, git, pre-commit, clippy,
-      ninja/meson, clang
+      ninja/meson, clang, jq
     scientifictools: |
       Spice, Cosmographia
 
