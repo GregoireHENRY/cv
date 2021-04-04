@@ -212,7 +212,7 @@ $body$
 \end{adjustwidth}
 
 % Conferences.
-\needspace{7\baselineskip}
+\needspace{6\baselineskip}
 \section{Conferences}
 \footnotesize
 \begin{adjustwidth}{3cm}{0cm}
@@ -220,11 +220,11 @@ $body$
     \textbf{$conferences.name$}, $conferences.location$\hfill \textit{$conferences.date$}\\
         $conferences.topic$\\
         \textit{$conferences.participants$}\\
+        $if(conferences.link)$
+            \mhref{$conferences.link.replacement$}{$conferences.link.url$},
+        $endif$
         $if(conferences.reference)$
             $conferences.reference$\\
-        $endif$
-        $if(conferences.link)$
-            \mhref{$conferences.link.replacement$}{$conferences.link.url$}\\
         $endif$
         $sep$\\
     $endfor$

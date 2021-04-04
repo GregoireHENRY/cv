@@ -25,7 +25,7 @@ formations:
       | Minor: space, launcher & satellites
       | Astrophysics, Modeling asteroid population in Solar System,
         Real time systems, Space mechanics, Atmospheric reentry, Optics in
-        aerospace engineering, Plasma physics, Space propulsions systems,
+        aerospace engineering, Plasma physics, Space propulsion systems,
         Electric & nuclear propulsion for spacecraft, Satellites design,
         Launchers design, Payload integration and launchers, Conception of
         space mission
@@ -123,7 +123,7 @@ participations:
       description: |
         Association to send the first cubesat our school 100% made by the
         students into space. Demonstration of new technology to flight in low
-        orbit with electric propulsion. Member of the one board computer (OBC)
+        orbit with electric propulsion. Member of the On-board computer (OBC)
         team.
 
 aboutme: |
@@ -136,7 +136,8 @@ aboutme: |
 
 codingskills:
     languages: |
-      Rust, Python, C, C++, Julia, Matlab, Bash, Fortran, LaTeX, OpenGL, Regex, Markdown
+      Rust, Python, C, C++, Julia, Matlab, Shell scripts, Bash, Fortran, LaTeX,
+      OpenGL, SDL2, Qt5, GTK3, Regex, Markdown, Pandoc, Vim scripts
     concepts: |
       Asynchronous/parallelization, tests, test driven development,
       wrapper/bindings, interface between languages
