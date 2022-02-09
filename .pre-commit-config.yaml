@@ -2,7 +2,7 @@
 fail_fast: true
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: master
+      rev: v4.1.0
       hooks:
           - id: check-added-large-files
             args: [--maxkb=500]
@@ -10,10 +10,9 @@ repos:
           - id: check-merge-conflict
           - id: end-of-file-fixer
           - id: trailing-whitespace
-          - id: no-commit-to-branch
             stages: [commit]
     - repo: https://github.com/jumanjihouse/pre-commit-hooks
-      rev: master
+      rev: 2.1.5
       hooks:
           - id: forbid-binary
             exclude: |
