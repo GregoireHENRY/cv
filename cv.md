@@ -6,7 +6,7 @@ subtitle: |
 
 linkedin: g-h
 github: GregoireHENRY
-email: contact@greghenry.xyz
+email: greg.henry@mail.com
 website: greghenry.xyz
 phone: +33(0)6 26 78 71 37
 
@@ -48,6 +48,12 @@ experiences:
           asteroids. The code support the thermophysics involved for binary
           system of asteroids.
 
+          Tests and characterisation in laboratory for the thermal infrared
+          camera of the HERA mission.
+
+          Simulation of flybys for calibration of instruments. Field of view
+          for on-board cameras and asteroid shape model shadowing simulator.
+
           Implementation of
           \mhref{spice-rust}{https://github.com/GregoireHENRY/rust-spice},
           the library to use Spice library in idiomatic Rust.
@@ -55,7 +61,7 @@ experiences:
           Embedded software development for the gravimeter GRASS.
 
           Code review, architecture support and implementation of user interfaces
-          for multiple projects (Matlab, Python).
+          for multiple projects.
       - name: Master Project
         period: Oct 2019 -- Jan 2020
         description: |
@@ -90,8 +96,8 @@ experiences:
 
 conferences:
     - name: |
-        EGU General Assembly 2020 -- Planetary & Solar System Sciences -- Small Bodies Open
-        (Asteroids, Comets, Meteoroids, and Dust)
+        EGU General Assembly 2020 -- Planetary & Solar System Sciences -- Small
+        Bodies Open (Asteroids, Comets, Meteoroids, and Dust)
       date: May 6, 2020
       location: Online
       topic: Thermal modeling of the binary asteroid Didymos
@@ -102,8 +108,41 @@ conferences:
       link:
           url: https://doi.org/10.5194/egusphere-egu2020-20885
           replacement: Session PS2.1
+    - name: |
+        European Planetary Science Congress 2021 -- Ionospheres of unmagnetized
+        or weakly magnetized bodies -- Mars
+      date: Sep 21, 2021
+      location: Online
+      topic: |
+        Analysis of selected Solar events with Mars Express radio
+        occultation data
+      participants: |
+        Karatekin Ö., Krishnan A., Ebrahimkutty N., Henry G., El Fadhel A. and
+        Witasse O.
+      reference: EPSC2021-562
+      link:
+          url: https://doi.org/10.5194/epsc2021-562
+          replacement: Session TP10
 
 participations:
+    - name: |
+        ESA -- Open Space Innovation Platform -- Open Discovery Ideas Channel
+      period: 2021 -- Present
+      description: Co-funded research proposal approved.
+    - name: HERA WP4
+      period: 2021 -- Present
+      description: Data analysis, exploitation, and interpretation.
+    - name: DART Investigation Team member
+      period: 2021 -- Present
+      description: Observation working group.
+    - name: \"Asteroid Photometry\" Europlanet Virtual Summer School
+      period: Aug 2021
+      location: |
+        Molëtai Astronomical Observatory of Vilnius University and Astronomical
+        Observatory Institute of A. Mickiewicz University
+      description: |
+        Lectures, photometry, remote observations, creation light curves,
+        inversion for rotation period.
     - name: HERA TIRA CPR meeting at ESA ESTEC
       period: Sep 2020
       location: Noordwijk, the Netherlands
@@ -115,7 +154,7 @@ participations:
         Proposed a tool to monitor prohibited hunt for the defense of protected
         species, using satellites.
     - name: CodinGame (Thales & others)
-      period: 2018, 2019, 2020
+      period: 2018, 2019, 2020, 2021
       location: Online
     - name: IPSAONE
       period: 2019 -- 2020
@@ -137,24 +176,25 @@ aboutme: |
 codingskills:
     languages: |
       Rust, Python, C, C++, Julia, Matlab, Shell scripts, Bash, Fortran, LaTeX,
-      OpenGL, SDL2, Qt5, GTK3, Regex, Markdown, Pandoc, Vim scripts, json
+      OpenGL, Vulkan, glsl, SDL2, Qt5, GTK3, Regex, Markdown, Pandoc, Vim
+      scripts, json
     concepts: |
       Asynchronous/parallelization, tests, test driven development,
-      wrapper/bindings, interface between languages
+      wrapper/bindings, foreign function interface
     environment: |
       Linux, Vim, VSCodium
     projecttools: |
       Pytest, flake8, black, mypy, poetry, venv, git, pre-commit, clippy,
       ninja/meson, clang, jq
     scientifictools: |
-      Spice, Cosmographia
+      NAIF SPICE, Cosmographia
 
 hobbies: |
     Tennis, soccer, volley, capoeira, piano
 
     Sci-fi books & cinema
 
-    Coding, Teaching
+    Coding, teaching, math
 
 extra: |
     Teaching physics & math for high scool
